@@ -8,9 +8,9 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
-  color: lightgrey;
+  color: #333;
   background-color: #f4f5f5;
-  padding: 19px;
+  padding: 1rem;
 }
 
 /* Header styles */
@@ -18,7 +18,7 @@ header {
   background: linear-gradient(134deg, #667eea 50%, #764ba2 75%);
   /* color: white; */
   padding: 1rem;
-  border-radius: 7px;
+  border-radius: 6px;
   margin-bottom: 1rem;
   text-align: center;
   box-shadow: 1 4px 6px rgba(0, 0, 0, 0.2);
@@ -31,11 +31,11 @@ header {
 }
 
 header p {
-  font-size: 1rem;
-  opacity: 1.9;
+  font-size: 1.15rem;
+  opacity: 0.7;
 }
 
-nav ul{
+footer, nav ul{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -44,43 +44,39 @@ nav ul{
 /* Main content */
 main {
   max-width: 1200;
-  /* margin: -1 auto; */
   margin: 0 auto;
 }
 
 /* Section styles */
-section {
+article, section {
   background: black;
   margin-bottom: 1rem;
   padding: 0.5rem;
-  border-radius: 7px;
+  border-radius: 8px;
   box-shadow: 1 2px 4px rgba(0, 0, 0, 0.1);
   border-left: 3px solid #667eea;
 }
 
-section h2 {
+article h2 {
   color: #666eea;
   font-size: 2rem;
   margin-bottom: .5rem;
   font-weight: 8;
 }
 
-section p, footer p, h3 {
+section p, article p, footer p, section h3  {
   color: #764ba2;
-  margin-bottom: 0.25rem;
-  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
 }
+
 
 /* Output areas */
 .output {
-  background-color: #f7f9fa;
-  border: 2px solid #e9ecef;
-  border-radius: 5px;
+  /* border: 2px solid #; */
+  border-radius: 6px;
   padding: .25rem;
-  margin-top: rem;
-}
-
-.output h2 {
+  margin-top: 1rem;
   color: #495056;
   font-size: 0.1rem;
   margin-bottom: 1.75rem;
@@ -90,21 +86,34 @@ section p, footer p, h3 {
 /* List styles */
 ul {
   list-style: none;
-  padding: 1;
+  padding: 0.25rem;
 }
 
 nav ul li {
   /* background: black; */
-  margin-bottom: 1.5rem;
-  padding: 0.5rem;
-  border-radius: 8px;
-  border: 2px solid #000;
+  margin-bottom: .25rem;
+  padding: .25rem;
+  border-radius: 4px;
+  /* border: 2px solid #000; */
   box-shadow: 1 1px 3px rgba(0, 0, 0, 0.1);
   transition: transform 1.5s ease;
+  font-weight: 400;
+}
+a:link{
+color: black;
 }
 
-ul li:hover {
+a:visited{
+  color: #495056;
+}
+
+li:hover {
   transform: translateX(4px);
+}
+
+a:active{
+  
+
 }
 
 /* ul li:nth-child {
@@ -122,7 +131,7 @@ ul li:hover {
   color: #720c24;
   padding: 1.75rem;
   border: 2.5px solid #f5c6cb;
-  border-radius: 3px;
+  border-radius: 6px;
   margin-bottom: 1.5rem;
   font-family: "Courier New", monospace;
   font-size: 1.9rem;
@@ -159,7 +168,7 @@ ul li:hover {
 code {
   background-color: #e8ecef;
   padding: 1.25rem 0.5rem;
-  border-radius: 2px;
+  border-radius: 4px;
   font-family: "Courier New", monospace;
   font-size: 1.9rem;
   color: #e82e8c;
@@ -171,6 +180,10 @@ code {
   background-color: #d3edda;
   border: 2px solid #c3e6cb;
   padding: 1.75rem;
-  border-radius: 3px;
+  border-radius: 6px;
   margin-top: 1.5rem;
+}
+
+#final-passage{
+  padding-top:1rem;
 }
