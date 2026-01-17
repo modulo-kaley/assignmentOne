@@ -19,6 +19,7 @@ This is a summary of the main tasks you need to complete.
   - [x] Add your Node.js screenshot to the asset folder.
   - [ ] Fix all bugs in the HTML, CSS, and JavaScript files.
   - [ ] Implement the tasks in the script.js file to the best of your ability using Javascript conventions
+
 - [ ] **Part 3: Submission**
   - [ ] Make at least two meaningful Git commits and push them to GitHub.
   - [ ] Deploy your fixed website using GitHub Pages.
@@ -35,10 +36,12 @@ Look for common errors across all files. There are issues with syntax, logic, an
   - Ensure proper heading hierarchy (h1 should be the main heading, h2 for subheadings, h3 for sub-subheadings, etc.).
   - Are all tags properly closed and nested correctly?
   - Use the [W3C validator](https://validator.w3.org/) to find syntax errors.
+
 - **CSS (`main.css`)**:
   - Check for simple typos in property names or selectors.
   - Test the site on different screen sizes using your browser's developer tools. Is it responsive?
   - Use your browser's inspector to check for accessibility issues, like poor color contrast.
+  
 - **JavaScript (`index.js`)**:
   - **Always check the browser console first!** It will tell you where the errors are.
   - Look for syntax errors like missing commas, brackets, or parentheses.
