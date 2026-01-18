@@ -21,7 +21,7 @@ This is a summary of the main tasks you need to complete.
   - [ ] Implement the tasks in the script.js file to the best of your ability using Javascript conventions
 
 - [ ] **Part 3: Submission**
-  - [ ] Make at least two meaningful Git commits and push them to GitHub.
+  - [x] Make at least two meaningful Git commits and push them to GitHub.
   - [ ] Deploy your fixed website using GitHub Pages.
   - [ ] Submit your repository and live GitHub Pages links to Brightspace.
 

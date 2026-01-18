@@ -78,7 +78,19 @@ ageFilter(characters, 32);
 
 // exercise five
 
-
+//exercise six 
+const brokenCharacters = [
+  { id: 11, age: 23 },
+  { id: 12, age: 45 },
+  { id: 13, age: 23 },
+  { id: 14, age: 57 },
+  { id: 15, age: 900 },
+  { id: 16, age: 32 },
+  { id: 17, age: 234 },
+  { id: 18, age: 33 },
+  { id: 19, age: 112 },
+  { id: 20,  age: 27 }
+];
 
 // 1. Iterate through the characters array and output each character's name to the console using console.log().
 // Then, dynamically create <li> elements for each character name
@@ -103,7 +115,6 @@ ageFilter(characters, 32);
 
 // 6. Create a second array called "brokenCharacters" that intentionally contains objects with missing name properties 
 // (e.g., objects with only id and age). Pass this broken array to your error-handling functions from exercise 
-
-
-// 5. Verify that your error handling correctly identifies the missing name properties, logs appropriate error messages to the console, and displays those error messages in the HTML div element with id "broken-array-errors".
+// 5. Verify that your error handling correctly identifies the missing name properties, 
+// logs appropriate error messages to the console, and displays those error messages in the HTML div element with id "broken-array-errors".
 
