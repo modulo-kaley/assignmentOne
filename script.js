@@ -5,6 +5,7 @@
 const namesList = document.getElementById("names-list");
 const youthfulList = document.getElementById("young-characters-list");
 const functionList = document.getElementById("function-list");
+const ageFilterList = document.getElementById("age-filter-list");
 
 // sample data - expanded Star Wars characters with varied ages
 const characters = [
@@ -20,6 +21,7 @@ const characters = [
   { id: 10, name: "Padmé Amidala", age: 27 },
 ];
 
+
 function renderList(array, ul) {
   ul.innerHTML = "";
 
@@ -30,11 +32,6 @@ function renderList(array, ul) {
     li.textContent = i;
     ul.appendChild(li);
   });
-}
-
-function ageFilterList(characters, maxAge){
-  
-
 }
 
 // exercise one
@@ -55,6 +52,18 @@ const young = characters
 const names = characters.map((c) => c.name);
 renderList(names, functionList);
 
+// exercise four
+function ageFilter(characters, maxAge){
+  const filteredNames = characters
+  .filter((characters) => characters.age < maxAge)
+  .map((characters) => characters.name);
+
+  renderList(filteredNames, ageFilterList);
+}
+
+ageFilter(characters, 32);
+
+// exercise five
 
 
 
@@ -65,9 +74,6 @@ renderList(names, functionList);
 // 2. Filter the characters array to find only those characters whose age property is less than 40.
 // Log each filtered character's name to the console. 
 // Then, dynamically create <li> elements for each filtered character and append them to the HTML unordered list element with the id "young-characters-list".
-
-
-// Log each filtered character's name to the console. Then, dynamically create <li> elements for each filtered character and append them to the HTML unordered list element with the id "young-characters-list".
 
 // 3. Build a reusable function that accepts an array of character objects as a parameter. 
 // Inside the function, iterate through the array and extract each character's name property. Dynamically generate <li> elements for each name and append them to a target HTML list element. Call this function with the characters array and render the results in the unordered list with id "function-list".
