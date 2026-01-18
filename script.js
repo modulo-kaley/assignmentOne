@@ -6,6 +6,7 @@ const namesList = document.getElementById("names-list");
 const youthfulList = document.getElementById("young-characters-list");
 const functionList = document.getElementById("function-list");
 const ageFilterList = document.getElementById("age-filter-list");
+const errorMessages = document.getElementById("error-messages");
 
 // sample data - expanded Star Wars characters with varied ages
 const characters = [
@@ -24,7 +25,19 @@ const characters = [
 
 function renderList(array, ul) {
   ul.innerHTML = "";
+  const nameExists = array.every((item) => item && "name" in item);
 
+  if(!hasNames){_
+    console.error("At least one character is missing a name");
+
+    const uhOhError = document.createElement("p");
+    uhOhError.textContent = "Error: At least one character is missing a name";
+    uhOhError.classList.add("error-message");
+
+    if (errorContainer) errorContainer.appendChild(uhOhError);
+    return;
+  }
+  
   array.forEach((i) => {
     console.log(i);
 
