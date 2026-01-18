@@ -1,8 +1,10 @@
+// broken test data for exercise 6
 "use strict";
-console.log("You did it!");
+//console.log("You did it!");
 
 const namesList = document.getElementById("names-list");
 const youthfulList = document.getElementById("young-characters-list");
+const functionList = document.getElementById("function-list");
 
 // sample data - expanded Star Wars characters with varied ages
 const characters = [
@@ -17,32 +19,52 @@ const characters = [
   { id: 9, name: "C-3PO", age: 112 },
   { id: 10, name: "Padmé Amidala", age: 27 },
 ];
-// broken test data for exercise 6
 
-// 1. Iterate through the characters array and output each character's name to the console using console.log().
+function renderList(array, ul) {
+  ul.innerHTML = "";
+
+  array.forEach((i) => {
+    console.log(i);
+
+    const li = document.createElement("li");
+    li.textContent = i;
+    ul.appendChild(li);
+  });
+}
+
+function ageFilterList(characters, maxAge){
+  
+
+}
+
+// exercise one
 characters.forEach((c) => {
-  console.log(c.name);
-
-  // Then, dynamically create <li> elements for each character name
+  console.log(c.name)
   const li = document.createElement("li");
   li.textContent = c.name;
-
-  // and append them to the HTML unordered list element with the id "names-list".
   namesList.appendChild(li);
 });
 
-// 2. Filter the characters array to find only those characters whose age property is less than 40.
+// exercise two 
 const young = characters
   .filter((c) => c.age < 40)
   .map((c) => c.name);
+  renderList(young, youthfulList);
 
-  // Log each filtered character's name to the console. 
-  console.log(young);
-  
-  // Then, dynamically create <li> elements for each filtered character and append them to the HTML unordered list element with the id "young-characters-list".
-  const liYoung = document.createElement("li");
-  li.textContent = young;
-  youthfulList.appendChild(liYoung);
+// exercise three 
+const names = characters.map((c) => c.name);
+renderList(names, functionList);
+
+
+
+
+// 1. Iterate through the characters array and output each character's name to the console using console.log().
+// Then, dynamically create <li> elements for each character name
+//  and append them to the HTML unordered list element with the id "names-list".
+
+// 2. Filter the characters array to find only those characters whose age property is less than 40.
+// Log each filtered character's name to the console. 
+// Then, dynamically create <li> elements for each filtered character and append them to the HTML unordered list element with the id "young-characters-list".
 
 
 // Log each filtered character's name to the console. Then, dynamically create <li> elements for each filtered character and append them to the HTML unordered list element with the id "young-characters-list".
@@ -52,7 +74,8 @@ const young = characters
 
 // 4. Write a function that accepts two parameters: an array of character objects and a numeric age threshold. 
 // Inside the function, filter the array to include only characters whose age is below the threshold value. 
-// For each filtered character, create an <li> element with their name and append it to the target list. Call this function and render the results in the unordered list with id "age-filter-list".
+// For each filtered character, create an <li> element with their name and append it to the target list. 
+// Call this function and render the results in the unordered list with id "age-filter-list".
 
 // 5. Enhance your rendering functions from exercises 3 and 4 with error handling logic. 
 // Before accessing the name property of each character object, check whether the "name" property exists. 
