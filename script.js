@@ -2,6 +2,7 @@
 console.log("You did it!");
 
 const namesList = document.getElementById("names-list");
+const youthfulList = document.getElementById("young-characters-list");
 
 // sample data - expanded Star Wars characters with varied ages
 const characters = [
@@ -16,7 +17,6 @@ const characters = [
   { id: 9, name: "C-3PO", age: 112 },
   { id: 10, name: "Padmé Amidala", age: 27 },
 ];
-
 // broken test data for exercise 6
 
 // 1. Iterate through the characters array and output each character's name to the console using console.log().
@@ -31,7 +31,20 @@ characters.forEach((c) => {
   namesList.appendChild(li);
 });
 
-// 2. Filter the characters array to find only those characters whose age property is less than 40. 
+// 2. Filter the characters array to find only those characters whose age property is less than 40.
+const young = characters
+  .filter((c) => c.age < 40)
+  .map((c) => c.name);
+
+  // Log each filtered character's name to the console. 
+  console.log(young);
+  
+  // Then, dynamically create <li> elements for each filtered character and append them to the HTML unordered list element with the id "young-characters-list".
+  const liYoung = document.createElement("li");
+  li.textContent = young;
+  youthfulList.appendChild(liYoung);
+
+
 // Log each filtered character's name to the console. Then, dynamically create <li> elements for each filtered character and append them to the HTML unordered list element with the id "young-characters-list".
 
 // 3. Build a reusable function that accepts an array of character objects as a parameter. 
