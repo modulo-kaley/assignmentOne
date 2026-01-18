@@ -1,4 +1,7 @@
 "use strict";
+console.log("You did it!");
+
+const namesList = document.getElementById("names-list");
 
 // sample data - expanded Star Wars characters with varied ages
 const characters = [
@@ -17,9 +20,16 @@ const characters = [
 // broken test data for exercise 6
 
 // 1. Iterate through the characters array and output each character's name to the console using console.log().
+characters.forEach((c) => {
+  console.log(c.name);
 
+  // Then, dynamically create <li> elements for each character name
+  const li = document.createElement("li");
+  li.textContent = c.name;
 
-// Then, dynamically create <li> elements for each character name and append them to the HTML unordered list element with the id "names-list".
+  // and append them to the HTML unordered list element with the id "names-list".
+  namesList.appendChild(li);
+});
 
 // 2. Filter the characters array to find only those characters whose age property is less than 40. 
 // Log each filtered character's name to the console. Then, dynamically create <li> elements for each filtered character and append them to the HTML unordered list element with the id "young-characters-list".
@@ -41,3 +51,4 @@ const characters = [
 
 
 // 5. Verify that your error handling correctly identifies the missing name properties, logs appropriate error messages to the console, and displays those error messages in the HTML div element with id "broken-array-errors".
+

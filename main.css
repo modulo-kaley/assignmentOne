@@ -33,6 +33,7 @@ header {
 header p {
   font-size: 1.15rem;
   opacity: 0.7;
+  font-weight: 400;
 }
 
 footer, nav ul{
@@ -47,8 +48,8 @@ main {
   margin: 0 auto;
 }
 
-/* Section styles */
-article, section {
+/* Article styles */
+article {
   background: black;
   margin-bottom: 1rem;
   padding: 0.5rem;
@@ -64,7 +65,7 @@ article h2 {
   font-weight: 8;
 }
 
-section p, article p, footer p, section h3  {
+section p, section ul li, article p, footer p, section h3  {
   color: #764ba2;
   margin-bottom: 1rem;
   font-size: 1.15rem;
@@ -111,14 +112,10 @@ li:hover {
   transform: translateX(4px);
 }
 
-a:active{
-  
-
-}
-
-/* ul li:nth-child {
+/* I don't know about this one ...*/
+ul li:nth-child {
   margin-bottom: 1;
-} */
+} 
 
 /* Error message styles */
 #error-messages,
@@ -185,5 +182,5 @@ code {
 }
 
 #final-passage{
-  padding-top:1rem;
+  padding-top: 1rem;
 }
