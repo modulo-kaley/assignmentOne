@@ -41,33 +41,24 @@ function renderList(array, ul, errorHome) {
   ul.innerHTML ="";
   if (errorHome) errorHome.innerHTML = "";
 
-  array.forEach((item, index) => {
-    //object 
-    if (item && tyepof item === "object") {
-      if (!("name in item")) {
-        const message = 'Error: missing "name" at index ${index} (id: ${index.id ?? "unknown})`;
-        console.error(message, item);
+  array.forEach((c, index) => {
+    if (!c || typeof c !== "object" || !("name" in c)) {
+      const warn = (`Missing name at index ${index}`);
+      console.error(warn, c);
 
-        if () { 
-          const p = document.createElement("p");
-          p.textContent = message;
-          p.classList.add("error-message");
-          errorSection.appendChild(p);
+      if (errorHome) {
+        const p = document.createElement("p");
+        p.textContent = warn;
+        p.classList.add("error-message")
+        errorHome.appendChild(p);
       }
       return;
     }
-    console.log(item.name);
-    const li = document.createElement("li");
-    li.textContent = item.name;
-    ul.appendChild(li);
-    return;
-  })
-  
-
-
-  //string
-
-
+      console.log(c.name);
+      const li = document.createElement("li");
+      li.textContent = c.name;
+      ul.appendChild(li);
+    });
 }
 
 // exercise one
@@ -81,18 +72,18 @@ characters.forEach((c) => {
 // exercise two 
 const young = characters
   .filter((c) => c.age < 40)
-  .map((c) => c.name);
+  // .map((c) => c.name);
   renderList(young, youthfulList);
 
 // exercise three 
-const names = characters.map((c) => c.name);
-renderList(names, functionList);
+// const names = characters.map((c) => c.name);
+renderList(characters, functionList);
 
 // exercise four
-function ageFilter(characters, maxAge){
-  const filteredNames = characters
-  .filter((characters) => characters.age < maxAge)
-  .map((characters) => characters.name);
+function ageFilter(c, maxAge){
+  const filteredNames = c
+  .filter((c) => c.age < maxAge)
+  .map((c) => c.name);
 
   renderList(filteredNames, ageFilterList);
 }
