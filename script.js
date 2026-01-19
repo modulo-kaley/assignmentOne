@@ -36,7 +36,21 @@ const characters = [
   { id: 10, name: "Padmé Amidala", age: 27 },
 ];
 
+// exercise one
+characters.forEach((c) => {
+  console.log(c.name)
+  const li = document.createElement("li");
+  li.textContent = c.name;
+  namesList.appendChild(li);
+});
 
+// exercise two 
+const young = characters
+  .filter((c) => c.age < 40)
+  // .map((c) => c.name);
+  renderList(young, youthfulList);
+
+// exercise three
 function renderList(array, ul, errorHome) {
   ul.innerHTML ="";
   if (errorHome) errorHome.innerHTML = "";
@@ -60,38 +74,19 @@ function renderList(array, ul, errorHome) {
       ul.appendChild(li);
     });
 }
-
-// exercise one
-characters.forEach((c) => {
-  console.log(c.name)
-  const li = document.createElement("li");
-  li.textContent = c.name;
-  namesList.appendChild(li);
-});
-
-// exercise two 
-const young = characters
-  .filter((c) => c.age < 40)
-  // .map((c) => c.name);
-  renderList(young, youthfulList);
-
-// exercise three 
-// const names = characters.map((c) => c.name);
 renderList(characters, functionList);
 
 // exercise four
 function ageFilter(c, maxAge){
   const filteredNames = c
   .filter((c) => c.age < maxAge)
-  .map((c) => c.name);
 
   renderList(filteredNames, ageFilterList);
 }
-
 ageFilter(characters, 32);
 
 // exercise five
-renderList(characters, errorResults, errorMessges); 
+renderList(characters, errorResults, errorMessages); 
 
 //exercise six - broken data
 const brokenCharacters = [
