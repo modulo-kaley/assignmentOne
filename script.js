@@ -1,12 +1,26 @@
-// broken test data for exercise 6
 "use strict";
 //console.log("You did it!");
 
+// one
 const namesList = document.getElementById("names-list");
+// two
 const youthfulList = document.getElementById("young-characters-list");
+//three 
 const functionList = document.getElementById("function-list");
+//four
 const ageFilterList = document.getElementById("age-filter-list");
+
+//five
+//good results
+const errorResults = document.getElementById("error-handling-list");
+//bad results
 const errorMessages = document.getElementById("error-messages");
+
+//six 
+//good results 
+const brokenList = document.getElementById("broken-array-list");
+//bad results
+const brokenErrors = document.getElementById("broken-array-errors");
 
 // sample data - expanded Star Wars characters with varied ages
 const characters = [
@@ -23,28 +37,37 @@ const characters = [
 ];
 
 
-function renderList(array, ul) {
-  ul.innerHTML = "";
-  const nameExists = array.every((item) => item && "name" in item);
+function renderList(array, ul, errorHome) {
+  ul.innerHTML ="";
+  if (errorHome) errorHome.innerHTML = "";
 
-  if(!hasNames){_
-    console.error("At least one character is missing a name");
+  array.forEach((item, index) => {
+    //object 
+    if (item && tyepof item === "object") {
+      if (!("name in item")) {
+        const message = 'Error: missing "name" at index ${index} (id: ${index.id ?? "unknown})`;
+        console.error(message, item);
 
-    const uhOhError = document.createElement("p");
-    uhOhError.textContent = "Error: At least one character is missing a name";
-    uhOhError.classList.add("error-message");
-
-    if (errorContainer) errorContainer.appendChild(uhOhError);
-    return;
-  }
-  
-  array.forEach((i) => {
-    console.log(i);
-
+        if () { 
+          const p = document.createElement("p");
+          p.textContent = message;
+          p.classList.add("error-message");
+          errorSection.appendChild(p);
+      }
+      return;
+    }
+    console.log(item.name);
     const li = document.createElement("li");
-    li.textContent = i;
+    li.textContent = item.name;
     ul.appendChild(li);
-  });
+    return;
+  })
+  
+
+
+  //string
+
+
 }
 
 // exercise one
@@ -77,8 +100,9 @@ function ageFilter(characters, maxAge){
 ageFilter(characters, 32);
 
 // exercise five
+renderList(characters, errorResults, errorMessges); 
 
-//exercise six 
+//exercise six - broken data
 const brokenCharacters = [
   { id: 11, age: 23 },
   { id: 12, age: 45 },
@@ -91,6 +115,8 @@ const brokenCharacters = [
   { id: 19, age: 112 },
   { id: 20,  age: 27 }
 ];
+
+renderList(brokenCharacters, brokenList, brokenErrors); 
 
 // 1. Iterate through the characters array and output each character's name to the console using console.log().
 // Then, dynamically create <li> elements for each character name
